@@ -1,4 +1,4 @@
-#![allow(unused)]
+#![allow(dead_code)]
 
 struct MyHashSet {
     buckets: Vec<Vec<i32>>,
