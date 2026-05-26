@@ -1,16 +1,25 @@
 use crate::{
-    concatenation_of_array::get_concatenation, contains_duplicate::contains_duplicate,
-    longest_common_prefix::longest_common_prefix, majority_element::majority_element,
-    remove_element::remove_element, sort_colors::sort_colors, two_sum::two_sum,
+    concatenation_of_array::get_concatenation,
+    contains_duplicate::contains_duplicate,
+    encode_decode_strings::{decode, encode},
+    longest_common_prefix::longest_common_prefix,
+    majority_element::majority_element,
+    product_arr_except_self::product_except_self,
+    remove_element::remove_element,
+    sort_colors::sort_colors,
+    two_sum::two_sum,
 };
 
 mod concatenation_of_array;
 mod contains_duplicate;
 mod design_hashmap;
 mod design_hashset;
+mod encode_decode_strings;
 mod group_anagrams;
 mod longest_common_prefix;
 mod majority_element;
+mod product_arr_except_self;
+mod range_sum_query_2d;
 mod remove_element;
 mod sort_an_array;
 mod sort_colors;
@@ -61,4 +70,20 @@ fn main() {
     let mut arr = [2, 0, 2, 1, 1, 0].to_vec();
     sort_colors(&mut arr);
     println!("colors={:?}", arr);
+
+    // Encode Decode Strings
+    let input = [
+        "Hello".to_string(),
+        "World".to_string(),
+        "long string this is more than 10 chars".to_string(),
+    ]
+    .to_vec();
+    let encoded = encode(input);
+    let output = decode(encoded);
+    println!("output={:?}", output);
+
+    // Product array except self
+    let arr = [-1, 1, 0, -3, 3].to_vec();
+    let output = product_except_self(arr);
+    println!("product={:?}", output);
 }
