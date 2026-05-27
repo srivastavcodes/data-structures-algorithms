@@ -20,8 +20,9 @@ pub fn decode(str: String) -> Vec<String> {
     let mut i = 0;
     while i < bytes.len() {
         let mut j = i;
-        // In "100#(some long string)" 'i' will be at 1 and j will be at 0.
+        // In "100#(some long string)" 'i' will be at 1 and j will be at 0 after
         //    i^j^
+        // the inner loop ends.
         while bytes[j] != b'#' {
             j += 1;
         }
