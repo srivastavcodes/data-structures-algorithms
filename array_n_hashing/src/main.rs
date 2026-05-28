@@ -3,6 +3,7 @@ use crate::{
     concatenation_of_array::get_concatenation,
     contains_duplicate::contains_duplicate,
     encode_decode_strings::{decode, encode},
+    first_missing_positive::first_missing_positive,
     longest_common_prefix::longest_common_prefix,
     longest_consecutive_seq::longest_consecutive,
     majority_element::majority_element,
@@ -19,6 +20,7 @@ mod contains_duplicate;
 mod design_hashmap;
 mod design_hashset;
 mod encode_decode_strings;
+mod first_missing_positive;
 mod group_anagrams;
 mod longest_common_prefix;
 mod longest_consecutive_seq;
@@ -29,6 +31,7 @@ mod range_sum_query_2d;
 mod remove_element;
 mod sort_an_array;
 mod sort_colors;
+mod subarray_sum_eq_k;
 mod two_sum;
 mod valid_anagram;
 
@@ -47,12 +50,7 @@ fn main() {
     println!("result={:?}", res);
 
     // Longest common prefix
-    let arr = [
-        "flower".to_string(),
-        "flop".to_string(),
-        "flubbing".to_string(),
-    ]
-    .to_vec();
+    let arr = ["flower".to_string(), "flop".to_string(), "flubbing".to_string()].to_vec();
     let res = longest_common_prefix(arr);
     println!("result={:?}", res);
 
@@ -107,4 +105,9 @@ fn main() {
     let arr = [3, 2, 3, 4, 2, 2].to_vec();
     let output = majority_element_ii(arr);
     println!("majorities={:?}", output);
+
+    // First Missing Positive
+    let arr = [1, 2, 3].to_vec();
+    let output = first_missing_positive(arr);
+    println!("positive={:?}", output);
 }
