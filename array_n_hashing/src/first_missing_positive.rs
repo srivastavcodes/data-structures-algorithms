@@ -5,10 +5,13 @@ pub fn first_missing_positive(mut nums: Vec<i32>) -> i32 {
     let mut i = 0;
 
     while i < len {
+        // Skipping zeros and elements that are larger than the size to avoid
+        // infinite looping and index out of bounds errors respectively.
         if nums[i] <= 0 || nums[i] as usize > len {
             i += 1;
             continue;
         }
+        // Index where the element should be.
         let idx = nums[i] as usize - 1;
 
         if nums[i] != nums[idx] {
